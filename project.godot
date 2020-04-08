@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://scripts/Player.gd"
+}, {
+"base": "Object",
+"class": "Tile",
+"language": "GDScript",
+"path": "res://scripts/Types/Tile.gd"
+}, {
+"base": "Object",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://scripts/Utils.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Player": "",
+"Tile": "",
+"Utils": ""
 }
 
 [application]
@@ -26,7 +38,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://scripts/Globals.gd"
+Constants="*res://scripts/Constants.gd"
 
 [display]
 
