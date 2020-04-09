@@ -15,9 +15,9 @@ _global_script_classes=[ {
 "path": "res://scripts/Player.gd"
 }, {
 "base": "Object",
-"class": "Tile",
+"class": "TileInfo",
 "language": "GDScript",
-"path": "res://scripts/Types/Tile.gd"
+"path": "res://scripts/Types/TileInfo.gd"
 }, {
 "base": "Object",
 "class": "Utils",
@@ -26,7 +26,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Player": "",
-"Tile": "",
+"TileInfo": "",
 "Utils": ""
 }
 
