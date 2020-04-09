@@ -23,17 +23,23 @@ _global_script_classes=[ {
 "class": "Utils",
 "language": "GDScript",
 "path": "res://scripts/Utils.gd"
+}, {
+"base": "Node2D",
+"class": "WorldGen",
+"language": "GDScript",
+"path": "res://scripts/WorldGen.gd"
 } ]
 _global_script_class_icons={
 "Player": "",
 "TileInfo": "",
-"Utils": ""
+"Utils": "",
+"WorldGen": ""
 }
 
 [application]
 
 config/name="kinda_2048"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
