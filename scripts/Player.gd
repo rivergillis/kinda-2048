@@ -29,7 +29,7 @@ func process_player_turn(delta: float) -> void:
 	# set to the AI's turn.
 	position = Utils.screen_tile_to_px(target_tile)
 	if !current_tile.equals(target_tile):
-		emit_signal("player_moved", target_tile)
+		emit_signal("player_moved", current_tile)
 		GameState.turn = GameState.TurnState.AI_TURN
 	current_tile = target_tile
 

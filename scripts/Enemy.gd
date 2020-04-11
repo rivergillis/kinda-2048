@@ -30,5 +30,5 @@ func initialize() -> void:
 	position = Utils.screen_tile_to_px(current_tile)
 	visible = true
 	
-func on_player_moved(target_tile: TileInfo) -> void:
-	player_tile = target_tile
+func on_player_moved(last_player_tile: TileInfo) -> void:
+	player_tile = last_player_tile
