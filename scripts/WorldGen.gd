@@ -12,3 +12,5 @@ func _ready() -> void:
 			var tile_bg = TileBG.instance()
 			tile_bg.position = Utils.screen_tile_to_px(tile)
 			add_child(tile_bg)
+	GameState.turn = GameState.TurnState.PLAYER_TURN
+	$Player.initialize()

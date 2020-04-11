@@ -4,12 +4,15 @@ class_name Player
 
 var current_tile: TileInfo = TileInfo.new()
 
-func _ready():
-	current_tile.x = Constants.SCREEN_TILES_HORIZ_UNPADDED / 2
-	current_tile.y = Constants.SCREEN_TILES_VERT_UNPADDED / 2
+func _process(delta: float) -> void:
+	match GameState.turn:
+		GameState.TurnState.PLAYER_TURN:
+			process_player_turn(delta)
+		GameState.TurnState.AI_TURN:
+			return
 
 # warning-ignore:unused_argument
-func _process(delta: float) -> void:
+func process_player_turn(delta: float) -> void:
 	if Input.is_action_just_pressed("move_up"):
 		current_tile.y -= 1
 	elif Input.is_action_just_pressed("move_down"):
@@ -24,3 +27,8 @@ func _process(delta: float) -> void:
 	
 	position = Utils.screen_tile_to_px(current_tile)
 
+func initialize() -> void:
+	current_tile.x = Constants.SCREEN_TILES_HORIZ_UNPADDED / 2
+	current_tile.y = Constants.SCREEN_TILES_VERT_UNPADDED / 2
+	position = Utils.screen_tile_to_px(current_tile)
+	visible = true
