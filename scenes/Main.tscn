@@ -5,7 +5,7 @@
 [ext_resource path="res://scripts/dbg/TurnLabel.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="WorldGen" parent="." instance=ExtResource( 2 )]
 
