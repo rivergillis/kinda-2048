@@ -13,19 +13,25 @@ func _process(delta: float) -> void:
 
 # warning-ignore:unused_argument
 func process_player_turn(delta: float) -> void:
+	var target_tile := TileInfo.new(current_tile.x, current_tile.y)
 	if Input.is_action_just_pressed("move_up"):
-		current_tile.y -= 1
+		target_tile.y -= 1
 	elif Input.is_action_just_pressed("move_down"):
-		current_tile.y += 1
+		target_tile.y += 1
 	elif Input.is_action_just_pressed("move_left"):
-		current_tile.x -= 1
+		target_tile.x -= 1
 	elif Input.is_action_just_pressed("move_right"):
-		current_tile.x += 1
+		target_tile.x += 1
 	
 	# Prevent the player from moving beyond the edge of the screen.
-	current_tile = Utils.clamp_tile_position(current_tile)
+	target_tile = Utils.clamp_tile_position(target_tile)
 	
-	position = Utils.screen_tile_to_px(current_tile)
+	# Update the position to match the target. If the player moved,
+	# set to the AI's turn.
+	position = Utils.screen_tile_to_px(target_tile)
+	if !current_tile.equals(target_tile):
+		GameState.turn = GameState.TurnState.AI_TURN
+	current_tile = target_tile
 
 func initialize() -> void:
 	current_tile.x = Constants.SCREEN_TILES_HORIZ_UNPADDED / 2
