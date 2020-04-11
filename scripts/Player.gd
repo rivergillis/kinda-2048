@@ -5,11 +5,8 @@ class_name Player
 var current_tile: TileInfo = TileInfo.new()
 
 func _process(delta: float) -> void:
-	match GameState.turn:
-		GameState.TurnState.PLAYER_TURN:
-			process_player_turn(delta)
-		GameState.TurnState.AI_TURN:
-			return
+	if GameState.turn == GameState.TurnState.PLAYER_TURN:
+		process_player_turn(delta)
 
 # warning-ignore:unused_argument
 func process_player_turn(delta: float) -> void:

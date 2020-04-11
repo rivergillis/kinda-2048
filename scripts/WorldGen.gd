@@ -14,3 +14,4 @@ func _ready() -> void:
 			add_child(tile_bg)
 	GameState.turn = GameState.TurnState.PLAYER_TURN
 	$Player.initialize()
+	$Enemy.initialize()
