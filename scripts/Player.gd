@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-class_name Player
-
 signal player_moved(target_tile)
 
 var current_tile: TileInfo = TileInfo.new()

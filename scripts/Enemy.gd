@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-class_name Enemy
-
 var current_tile: TileInfo = TileInfo.new()
 var player_tile: TileInfo = TileInfo.new()
 
@@ -16,10 +14,10 @@ func _process(delta: float) -> void:
 func process_ai_turn(delta: float) -> void:
 	var xdiff = clamp(player_tile.x - current_tile.x, -1, 1)
 	var ydiff = clamp(player_tile.y - current_tile.y, -1, 1)
-	if xdiff != 0:
-		current_tile.x += xdiff
-	elif ydiff != 0:
+	if ydiff != 0:
 		current_tile.y += ydiff
+	elif xdiff != 0:
+		current_tile.x += xdiff
 	current_tile = Utils.clamp_tile_position(current_tile)
 	position = Utils.screen_tile_to_px(current_tile)
 	GameState.turn = GameState.TurnState.PLAYER_TURN
